@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var body_parser_1 = require("body-parser");
+var authRoutes_1 = require("./routes/authRoutes");
+var taskRoutes_1 = require("./routes/taskRoutes");
+var app = (0, express_1.default)();
+app.use(body_parser_1.default.json());
+app.use("/auth", authRoutes_1.default);
+app.use("/tasks", taskRoutes_1.default);
+exports.default = app;
